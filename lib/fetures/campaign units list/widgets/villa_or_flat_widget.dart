@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/fetures/units%20list/controller/cubit.dart';
-import 'package:property_launch_app/fetures/units%20list/controller/states.dart';
+import 'package:property_launch_app/fetures/campaign%20units%20list/controller/cubit.dart';
+import 'package:property_launch_app/fetures/campaign%20units%20list/controller/states.dart';
 import 'package:property_launch_app/utilities/components/custom_text.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
@@ -21,7 +21,8 @@ class VillaOrFlatWidget extends StatelessWidget {
               .isVillaChangeFun(villaOrFlat: containerTitle);
         },
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 28.w),
+          width: 86.w,
+          padding: EdgeInsets.symmetric(vertical: 8.h),
           decoration: BoxDecoration(
             color: UnitsListCubit.get(context).villaOrFlatt == containerTitle
                 ? ColorManager.primaryColor
@@ -33,6 +34,7 @@ class VillaOrFlatWidget extends StatelessWidget {
           ),
           child: CustomText(
             text: containerTitle,
+            textAlign: TextAlign.center,
             color: UnitsListCubit.get(context).villaOrFlatt == containerTitle
                 //condition based on witch is select
                 ? ColorManager.white

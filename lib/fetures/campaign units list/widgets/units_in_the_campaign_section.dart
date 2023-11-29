@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/fetures/units%20list/widgets/villa_or_flat_widget.dart';
+import 'package:property_launch_app/fetures/campaign%20units%20list/widgets/villa_or_flat_widget.dart';
 import 'package:property_launch_app/utilities/components/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 
@@ -21,17 +21,18 @@ class UnitsInTheCampaignSection extends StatelessWidget {
           text: Constants.unitsInTheCampaign,
           fontWeight: FontWeight.w500,
         ),
-        SizedBox(height: 10.h),
         //====================== villa , flat =====================
-        Row(
-          children: [
-            const VillaOrFlatWidget(containerTitle: "Villa"),
-            SizedBox(width: 10.w),
-            const VillaOrFlatWidget(containerTitle: "Flat")
-          ],
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 11.h),
+          child: Row(
+            children: [
+              const VillaOrFlatWidget(containerTitle: "Villa"),
+              SizedBox(width: 10.w),
+              const VillaOrFlatWidget(containerTitle: "Flat")
+            ],
+          ),
         ),
         //====================== units list ========================
-        SizedBox(height: 15.h),
         ListView.separated(
           shrinkWrap: true,
           padding: EdgeInsets.zero,
