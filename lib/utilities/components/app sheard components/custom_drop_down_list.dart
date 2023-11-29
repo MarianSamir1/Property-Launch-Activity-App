@@ -34,8 +34,8 @@ class CustomDropDownList extends StatelessWidget {
             ),
             CustomSvgPicture(
               svgImage: IconPathes.bottomArrow,
-              height: 5.h,
-              width: 5.w,
+              height: 8.r,
+              width: 8.r,
             )
           ],
         ),

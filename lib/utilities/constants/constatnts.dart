@@ -6,6 +6,7 @@ class Constants {
       "internet connection exception";
   static const String launch = 'Launch';
   static const String wishlist = 'Wishlist ';
+  static const String wishlists = 'Wish- Lists';
   static const String mangerApp = 'Manger App ';
   static const String loginWithMicrosoft = 'Login With Microsoft';
   static const String copyRights =
@@ -29,4 +30,6 @@ class Constants {
   static const String participatingClients = "Participating Clients";
   static const String managedWishList = "Managed Wish-List";
   static const String wishedForUnits = "Wished For Units";
+  static const String yourClients = "Your Clients";
+  static const String unitsInTheCampaign = "Units in the campaign";
 }

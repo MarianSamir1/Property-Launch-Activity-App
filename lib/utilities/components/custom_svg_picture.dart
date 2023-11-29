@@ -15,8 +15,8 @@ class CustomSvgPicture extends StatelessWidget {
     return SvgPicture.asset(
       svgImage,
       color: color,
-      height: height ?? 16.h,
-      width: width ?? 16.w,
+      height: height ?? 22.r,
+      width: width ?? 22.r,
     );
   }
 }

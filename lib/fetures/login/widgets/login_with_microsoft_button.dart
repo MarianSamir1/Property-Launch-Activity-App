@@ -40,15 +40,17 @@ class LoginWithMicrosoftButton extends StatelessWidget {
                     )
                   ],
                 ),
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  const CustomSvgPicture(svgImage: IconPathes.microsoft),
-                  SizedBox(width: 16.w),
-                  const CustomText(
-                    text: Constants.loginWithMicrosoft,
-                    fontWeight: FontWeight.w500,
-                  )
-                ]),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const CustomSvgPicture(svgImage: IconPathes.microsoft),
+                      SizedBox(width: 16.w),
+                      const CustomText(
+                        text: Constants.loginWithMicrosoft,
+                        fontWeight: FontWeight.w500,
+                      )
+                    ]),
               ),
             ),
           ),

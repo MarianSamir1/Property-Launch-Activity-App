@@ -18,8 +18,8 @@ class LogOutMenuWidget extends StatelessWidget {
       position: PopupMenuPosition.under,
       icon: CustomSvgPicture(
         svgImage: IconPathes.bottomArrow,
-        height: 5.h,
-        width: 5.w,
+        height: 8.r,
+        width: 8.r,
       ),
       color: ColorManager.white,
       padding: const EdgeInsets.all(0),
