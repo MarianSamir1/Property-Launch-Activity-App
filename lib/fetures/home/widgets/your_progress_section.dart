@@ -39,7 +39,6 @@ class YourProgressSection extends StatelessWidget {
           totalProgress: 41,
           currentProgress: 14,
         ),
-        SizedBox(height: 80.h),
       ],
     );
   }

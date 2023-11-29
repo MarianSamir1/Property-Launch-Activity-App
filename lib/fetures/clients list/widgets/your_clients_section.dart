@@ -28,7 +28,6 @@ class YourClientsSection extends StatelessWidget {
           separatorBuilder: (context, index) => SizedBox(height: 10.h),
           itemCount: 10,
         ),
-        SizedBox(height: 80.h),
       ],
     );
   }

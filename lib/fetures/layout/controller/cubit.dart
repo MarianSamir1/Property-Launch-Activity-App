@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:property_launch_app/fetures/clients%20list/view/clients_list_screen.dart';
 import 'package:property_launch_app/fetures/home/view/home_screen.dart';
+import 'package:property_launch_app/fetures/units%20list/view/units_list_screen.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'states.dart';
 
@@ -15,8 +16,9 @@ class LayoutCubit extends Cubit<LayoutState> {
   final List<Widget> taps = [
     const HomeScreen(),
     const ClientsListScreen(),
-    const Column(),
+    const UnitsListScreen(),
   ];
+  
   final List<String> tapsAppBarTitle = [
     Constants.yourDashboard,
     Constants.clientsList,

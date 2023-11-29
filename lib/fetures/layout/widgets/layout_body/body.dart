@@ -27,7 +27,8 @@ class LayoutBodyWidget extends StatelessWidget {
                 //============= header ==================
                 const LayoutHeaderBody(),
                 //============= tabs body ================
-                cubit.taps[cubit.currentIndex]
+                cubit.taps[cubit.currentIndex],
+                SizedBox(height: 80.h),
               ],
             ),
           ),
