@@ -32,4 +32,6 @@ class Constants {
   static const String wishedForUnits = "Wished For Units";
   static const String yourClients = "Your Clients";
   static const String unitsInTheCampaign = "Units in the campaign";
+  static const String messsages = "Messsages";
+  static const String yourClientsMessages = "Your Clients Messages";
 }

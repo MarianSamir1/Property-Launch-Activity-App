@@ -11,4 +11,5 @@ class IconPathes {
   static const String rhmobusFilledSelected = '${iconBase}rhmobus_filled_selected.svg';
   static const String unSlectedSquire = '${iconBase}un_slected_squire.svg';
   static const String person = '${iconBase}person.svg';
+  static const String backButton = '${iconBase}back_button.svg';
 }
