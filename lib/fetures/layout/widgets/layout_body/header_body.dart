@@ -57,17 +57,28 @@ class LayoutHeaderBody extends StatelessWidget {
                 )
               ],
             ),
-          if (cubit.selectedCampaignIndex == null) SizedBox(height: 8.h),
           if (cubit.selectedCampaignIndex == null)
-            CustomDropDownList(
-              hint: Constants.selectCampaign,
-              onOpenTap: () {
-                openBottomSheet(
-                  context,
-                  bottomSheetHeader: Constants.selectCampaign,
-                  widget: const BottomSheetRowItem(),
-                );
-              },
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 8.h),
+                CustomText(
+                  text: "Select a campaign to continue",
+                  color: ColorManager.black1919.withOpacity(0.7),
+                  fontWeight: FontWeight.w500,
+                ),
+                SizedBox(height: 8.h),
+                CustomDropDownList(
+                  hint: Constants.selectCampaign,
+                  onOpenTap: () {
+                    openBottomSheet(
+                      context,
+                      bottomSheetHeader: Constants.selectCampaign,
+                      widget: const BottomSheetRowItem(),
+                    );
+                  },
+                ),
+              ],
             )
         ],
       ),

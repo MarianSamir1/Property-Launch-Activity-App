@@ -15,8 +15,9 @@ class UnitsInTheCampaignSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SizedBox(height: 10.h),
+        //first secton of choose campain in layout screen ( LayoutHeaderBody )
         //====================== Campaign Features title =======================
+        SizedBox(height: 10.h),
         const CustomText(
           text: Constants.unitsInTheCampaign,
           fontWeight: FontWeight.w500,

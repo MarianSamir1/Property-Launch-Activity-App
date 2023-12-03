@@ -12,6 +12,7 @@ class YourClientsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        //first secton of choose campain in layout screen ( LayoutHeaderBody )
         //================= YourClients Section ==================
         SizedBox(height: 10.h),
         //====================== Campaign Features title =======================

@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
         return const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            //first secton of choose campain in layout screen ( LayoutHeaderBody )
             //================= Campaign Features Section ==================
             CampaignFeaturesSection(),
             //================= Your Progress ==================

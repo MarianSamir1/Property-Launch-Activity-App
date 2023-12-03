@@ -34,4 +34,9 @@ class Constants {
   static const String unitsInTheCampaign = "Units in the campaign";
   static const String messsages = "Messsages";
   static const String yourClientsMessages = "Your Clients Messages";
+  static const String clientDetails = "Client Details";
+  static const String call = "Call";
+  static const String pending = "Pending";
+  static const String pendingReservation = "Pending Reservation";
+  static const String reserved = "Reserved";
 }
