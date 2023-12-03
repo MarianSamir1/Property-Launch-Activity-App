@@ -25,7 +25,7 @@ class ClientDetailsBody extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) =>
                     const WishListContanierStatus(),
-                separatorBuilder: (context, index) => SizedBox(height: 16.h),
+                separatorBuilder: (context, index) => SizedBox(height: 10.h),
                 itemCount: 3,
               ),
               SizedBox(height: 16.h),

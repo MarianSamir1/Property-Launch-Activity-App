@@ -5,8 +5,6 @@ import 'package:property_launch_app/utilities/components/custom%20app%20bar/cust
 import 'package:property_launch_app/fetures/layout/widgets/floating_action_button.dart';
 import 'package:property_launch_app/fetures/layout/widgets/layout_body/body.dart';
 
-import '../../../utilities/styles/colors.dart';
-
 class LayoutScreen extends StatelessWidget {
   const LayoutScreen({super.key});
 
@@ -14,7 +12,6 @@ class LayoutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(widget: const LayoutAppBarWidget()),
-      backgroundColor: ColorManager.white,
       extendBodyBehindAppBar: true,
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/fetures/layout/controller/cubit.dart';
 import 'package:property_launch_app/fetures/campaign%20units%20list/controller/cubit.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
+import 'package:property_launch_app/utilities/styles/colors.dart';
 
 import 'fetures/login/view/login_screen.dart';
 
@@ -33,7 +34,10 @@ class MyApp extends StatelessWidget {
               child: child!,
             );
           }),
-          theme: ThemeData(fontFamily: Constants.fontFamily),
+          theme: ThemeData(
+            fontFamily: Constants.fontFamily,
+            scaffoldBackgroundColor: ColorManager.white,
+          ),
           home: const LoginScreen(),
         ),
       ),

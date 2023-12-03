@@ -17,6 +17,7 @@ class CustomDropDownList extends StatelessWidget {
       onTap: onOpenTap,
       child: Container(
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(2.r),
           border: Border.all(
             width: 1,
             color: ColorManager.lightGreyE0E0,

@@ -19,6 +19,7 @@ class Constants {
   static const String campaignUnits = 'Campaign Units';
   static const String signOut = "Sign out";
   static const String selectCampaign = "Select campaign";
+  static const String selectClient = "Select client";
   static const String campaign = "Campaign";
   static const String change = "Change";
   static const String campaignFeatures = "Campaign Features";
@@ -39,4 +40,6 @@ class Constants {
   static const String pending = "Pending";
   static const String pendingReservation = "Pending Reservation";
   static const String reserved = "Reserved";
+  static const String newWishList = "New Wish-List";
+  static const String continueText = "Continue";
 }

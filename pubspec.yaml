@@ -36,6 +36,7 @@ dependencies:
   aad_oauth: ^1.0.0
   flutter_svg: ^2.0.7
   linear_progress_bar: ^1.1.0
+  flutter_slidable: ^3.0.0
   
   flutter:
     sdk: flutter

@@ -7,8 +7,8 @@ import 'package:property_launch_app/utilities/styles/colors.dart';
 
 import '../../../../utilities/components/app sheard components/radio_row_item.dart';
 
-class BottomSheetRowItem extends StatelessWidget {
-  const BottomSheetRowItem({super.key});
+class SelectCampaignBottomSheetRowItem extends StatelessWidget {
+  const SelectCampaignBottomSheetRowItem({super.key});
 
   @override
   Widget build(BuildContext context) {
