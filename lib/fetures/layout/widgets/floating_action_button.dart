@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/fetures/add%20new%20wishlist/view/add_new_wishlist_screen.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/view/create_new_wishlist_screen.dart';
 import 'package:property_launch_app/utilities/components/navigation.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 
@@ -14,7 +14,7 @@ class FloatingActionButtonCustomization extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        navigatePush(context: context, widget: const AddNewWishListScreen());
+        navigatePush(context: context, widget: const CreateNewWishlistScreen());
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 30.w),

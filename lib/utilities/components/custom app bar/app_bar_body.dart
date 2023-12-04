@@ -8,7 +8,8 @@ import 'package:property_launch_app/utilities/styles/fonts.dart';
 
 class ScreensAppBarBody extends StatelessWidget {
   final String title;
-  const ScreensAppBarBody({super.key, required this.title});
+  final Function()? onTap;
+  const ScreensAppBarBody({super.key, required this.title, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class ScreensAppBarBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
-            onTap: () => Navigator.pop(context),
+            onTap: onTap ?? () => Navigator.pop(context),
             child: const CustomSvgPicture(
               svgImage: IconPathes.backButton,
             ),

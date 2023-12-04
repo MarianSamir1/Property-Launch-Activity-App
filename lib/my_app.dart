@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/cubit.dart';
 import 'package:property_launch_app/fetures/layout/controller/cubit.dart';
 import 'package:property_launch_app/fetures/campaign%20units%20list/controller/cubit.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => LayoutCubit()),
         BlocProvider(create: (context) => UnitsListCubit()),
+        BlocProvider(create: (context) => CreateNewWishlistCubit()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(430, 533),

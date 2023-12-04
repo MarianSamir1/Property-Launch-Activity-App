@@ -8,8 +8,8 @@ import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 
-class YourClientsListWidget extends StatelessWidget {
-  const YourClientsListWidget({super.key});
+class ClientData extends StatelessWidget {
+  const ClientData({super.key});
 
   @override
   Widget build(BuildContext context) {

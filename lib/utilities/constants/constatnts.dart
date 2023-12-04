@@ -42,4 +42,10 @@ class Constants {
   static const String reserved = "Reserved";
   static const String newWishList = "New Wish-List";
   static const String continueText = "Continue";
+  static const String selectUnits = "Select Units";
+  static const String selectedUnits = "Selected Units";
+  static const String client = "Client";
+  static const String confirm = "Confirm";
+  static const String edit = "Edit";
+  static const String addUnitsToTheWishlist = "Add units to the wishlist";
 }
