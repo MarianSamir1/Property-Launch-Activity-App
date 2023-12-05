@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/fetures/home/widgets/custom_linear_progrees_bar.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 
 class YourProgressSection extends StatelessWidget {

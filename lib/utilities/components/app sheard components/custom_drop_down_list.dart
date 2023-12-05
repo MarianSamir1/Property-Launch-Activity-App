@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/utilities/components/custom_svg_picture.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_svg_picture.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
 
 class CustomDropDownList extends StatelessWidget {
   final String hint;
+  final String? value;
   final Function()? onOpenTap;
-  const CustomDropDownList({super.key, required this.hint, this.onOpenTap});
+  const CustomDropDownList({super.key, required this.hint, this.onOpenTap, this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,9 @@ class CustomDropDownList extends StatelessWidget {
           borderRadius: BorderRadius.circular(2.r),
           border: Border.all(
             width: 1,
-            color: ColorManager.lightGreyE0E0,
+            color: value == null
+                ? ColorManager.lightGreyE0E0
+                : ColorManager.grey828,
           ),
         ),
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
@@ -28,16 +31,17 @@ class CustomDropDownList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomText(
-              text: hint,
-              color: Colors.grey,
+              text: value ?? hint,
+              color: value == null ? Colors.grey : ColorManager.black1919,
               fontSize: FontManager.font15,
               fontWeight: FontWeight.w500,
             ),
-            CustomSvgPicture(
-              svgImage: IconPathes.bottomArrow,
-              height: 8.r,
-              width: 8.r,
-            )
+            if (value == null)
+              CustomSvgPicture(
+                svgImage: IconPathes.bottomArrow,
+                height: 8.r,
+                width: 8.r,
+              )
           ],
         ),
       ),

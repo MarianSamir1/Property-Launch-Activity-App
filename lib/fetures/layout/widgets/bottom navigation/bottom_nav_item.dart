@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/utilities/components/custom_svg_picture.dart';
+import 'package:property_launch_app/utilities/components/other/custom_svg_picture.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
-import '../../../../utilities/components/custom_text.dart';
+import '../../../../utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/fetures/layout/controller/cubit.dart';
 import 'package:property_launch_app/fetures/layout/controller/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

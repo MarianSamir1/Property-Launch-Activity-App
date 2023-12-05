@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:linear_progress_bar/linear_progress_bar.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/utilities/components/custom_svg_picture.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_svg_picture.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
-import '../constants/icons_pathes.dart';
-import '../styles/colors.dart';
+import '../../constants/icons_pathes.dart';
+import '../../styles/colors.dart';
 
 openBottomSheet(context,
     {required String bottomSheetHeader, required Widget widget}) {

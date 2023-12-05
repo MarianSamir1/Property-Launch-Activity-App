@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/view/create_new_wishlist_screen.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/navigation.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
@@ -20,7 +22,12 @@ class AddWishListRow extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            navigatePush(
+              context: context,
+              widget: const CreateNewWishlistScreen(step: 1),
+            );
+          },
           icon: Icon(
             Icons.add_circle_outline_outlined,
             color: ColorManager.primaryColor,

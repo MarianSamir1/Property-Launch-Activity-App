@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:property_launch_app/utilities/components/custom_svg_picture.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_svg_picture.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';

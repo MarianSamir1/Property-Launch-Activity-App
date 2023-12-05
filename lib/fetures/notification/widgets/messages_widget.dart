@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
-import '../../../utilities/components/custom_svg_picture.dart';
+import '../../../utilities/components/other/custom_svg_picture.dart';
 
 class MesssagesWidget extends StatelessWidget {
   const MesssagesWidget({super.key});

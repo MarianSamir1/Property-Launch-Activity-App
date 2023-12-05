@@ -12,40 +12,41 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      size: Size(1.sw, 70.h),
-      painter: CustomShapePainter(),
-      child: Container(
-        color: Colors.transparent,
-        height: Platform.isAndroid ? 50.h : 60.h,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const Expanded(
-              child: BottomNavItem(
-                index: 0,
-                icon: IconPathes.homeIcon,
-                label: Constants.home,
+        size: Size(1.sw, 70.h),
+        painter: CustomShapePainter(),
+        child: Container(
+          color: Colors.transparent,
+          height: Platform.isAndroid ? 50.h : 60.h,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const Expanded(
+                child: BottomNavItem(
+                  index: 0,
+                  icon: IconPathes.homeIcon,
+                  label: Constants.home,
+                ),
               ),
-            ),
-            const Expanded(
-              child: BottomNavItem(
-                index: 1,
-                icon: IconPathes.clientListIcon,
-                label: Constants.clientsList,
+              const Expanded(
+                child: BottomNavItem(
+                  index: 1,
+                  icon: IconPathes.clientListIcon,
+                  label: Constants.clientsList,
+                ),
               ),
-            ),
-            const Expanded(
-              child: BottomNavItem(
-                index: 2,
-                icon: IconPathes.unitsListIcon,
-                label: Constants.unitsList,
+              const Expanded(
+                child: BottomNavItem(
+                  index: 2,
+                  icon: IconPathes.unitsListIcon,
+                  label: Constants.unitsList,
+                ),
               ),
-            ),
-            SizedBox(width: 25.w),
-            const Expanded(child: SizedBox())
-          ],
+              SizedBox(width: 25.w),
+              const Expanded(child: SizedBox())
+            ],
+          ),
         ),
-      ),
+
     );
   }
 }

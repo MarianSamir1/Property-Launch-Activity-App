@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/cubit.dart';
 import 'package:property_launch_app/utilities/components/app%20sheard%20components/unit_data_with_border.dart';
 import 'package:property_launch_app/utilities/components/custom%20buttons/custom_button.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 
@@ -11,6 +12,7 @@ class ConfirmWishlistbody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = CreateNewWishlistCubit.get(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
       child: Column(
@@ -21,17 +23,21 @@ class ConfirmWishlistbody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  //============================== client name ============================
                   const CustomText(
                     text: Constants.client,
                     fontWeight: FontWeight.bold,
                   ),
                   SizedBox(height: 8.h),
                   CustomText(
-                    text: "Ahmed Sami Mahmoud",
-                    fontWeight: FontWeight.w500,
+                    text: cubit.clientsList[cubit.selectedClientIndex!],
                     color: ColorManager.black1919.withOpacity(0.7),
+                    textOverflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    fontWeight: FontWeight.w500,
                   ),
                   SizedBox(height: 15.h),
+                  //============================== units list ============================
                   const CustomText(
                     text: Constants.selectedUnits,
                     fontWeight: FontWeight.w500,
@@ -43,21 +49,26 @@ class ConfirmWishlistbody extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) => const UnitDataWithBorder(),
                     separatorBuilder: (context, index) => SizedBox(height: 5.h),
-                    itemCount: 10,
+                    itemCount: cubit.unitsIDsList.length,
                   ),
                   SizedBox(height: 10.h),
                 ],
               ),
             ),
           ),
+          //============================== confirm /edit button ============================
           SizedBox(height: 8.h),
           CustomButton(
             buttonText: Constants.confirm,
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           SizedBox(height: 3.h),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              CreateNewWishlistCubit.get(context).backStep();
+            },
             child: const CustomText(
               text: Constants.edit,
               fontWeight: FontWeight.bold,

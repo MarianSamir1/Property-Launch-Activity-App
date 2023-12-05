@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/utilities/components/app%20sheard%20components/unit_list_tile.dart';
-import 'package:property_launch_app/utilities/components/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
 

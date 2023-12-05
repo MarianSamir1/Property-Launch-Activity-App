@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/fetures/add%20new%20wishlist/view/create_new_wishlist_screen.dart';
-import 'package:property_launch_app/utilities/components/navigation.dart';
+import 'package:property_launch_app/utilities/components/other/navigation.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 
 class FloatingActionButtonCustomization extends StatelessWidget {

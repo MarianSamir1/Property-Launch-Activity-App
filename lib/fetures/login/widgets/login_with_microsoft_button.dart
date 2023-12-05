@@ -4,9 +4,9 @@ import 'package:property_launch_app/fetures/layout/view/layout_screen.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 
-import '../../../utilities/components/custom_svg_picture.dart';
-import '../../../utilities/components/custom_text.dart';
-import '../../../utilities/components/navigation.dart';
+import '../../../utilities/components/other/custom_svg_picture.dart';
+import '../../../utilities/components/other/custom_text.dart';
+import '../../../utilities/components/other/navigation.dart';
 import '../../../utilities/constants/constatnts.dart';
 
 class LoginWithMicrosoftButton extends StatelessWidget {

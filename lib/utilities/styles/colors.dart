@@ -7,6 +7,7 @@ class ColorManager {
   static const Color black = Colors.black;
   static const Color white = Colors.white;
   static const Color red = Color(0xFFff0000);
+  static const Color yallow = Color.fromARGB(255, 255, 225, 0);
   static const Color orange = Color(0xFFf29339);
   static const Color lightGreyE0E0 = Color(0xFFe0e0e0);
   static const Color grey828 = Color(0xFF828282);

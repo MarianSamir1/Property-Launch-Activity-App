@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/fetures/layout/controller/cubit.dart';
-import 'package:property_launch_app/fetures/layout/controller/states.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/cubit.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/states.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
-
 import '../../../../utilities/components/app sheard components/radio_row_item.dart';
 
-class SelectCampaignBottomSheetRowItem extends StatelessWidget {
-  const SelectCampaignBottomSheetRowItem({super.key});
+class SelectClientBottomSheetList extends StatelessWidget {
+  const SelectClientBottomSheetList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var cubit = LayoutCubit.get(context);
-    return BlocBuilder<LayoutCubit, LayoutState>(
+    return BlocBuilder<CreateNewWishlistCubit, CreateNewWishlistState>(
       builder: (context, state) => SizedBox(
         height: 0.42.sh,
         child: ListView.separated(
@@ -21,15 +19,18 @@ class SelectCampaignBottomSheetRowItem extends StatelessWidget {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () async {
-                cubit.selectCampaignFun(campaignIndex: index);
+                CreateNewWishlistCubit.get(context)
+                    .selectClientFun(clientIndex: index);
                 await Future.delayed(const Duration(milliseconds: 200));
                 if (context.mounted) {
                   Navigator.pop(context);
                 }
               },
               child: RadioRowItem(
-                title: cubit.campaignList[index],
-                isSelected: cubit.selectedCampaignIndex == index,
+                title: CreateNewWishlistCubit.get(context).clientsList[index],
+                isSelected:
+                    CreateNewWishlistCubit.get(context).selectedClientIndex ==
+                        index,
               ),
             );
           },
@@ -37,7 +38,7 @@ class SelectCampaignBottomSheetRowItem extends StatelessWidget {
             height: 1,
             color: ColorManager.lightGreyE0E0,
           ),
-          itemCount: cubit.campaignList.length,
+          itemCount: CreateNewWishlistCubit.get(context).clientsList.length,
         ),
       ),
     );
