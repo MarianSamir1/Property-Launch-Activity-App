@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/fetures/layout/widgets/bottom%20navigation/custom_bottom_nav.dart';
 import 'package:property_launch_app/fetures/layout/widgets/custom%20app%20bar/app_bar_widget.dart';
 import 'package:property_launch_app/utilities/components/custom%20app%20bar/custom_app_bar.dart';
@@ -11,7 +12,7 @@ class LayoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(widget: const LayoutAppBarWidget()),
+      appBar: customAppBar(widget: const LayoutAppBarWidget() , toolbarHeight: 85.h),
       extendBodyBehindAppBar: true,
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,

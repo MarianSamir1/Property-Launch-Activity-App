@@ -1,4 +1,4 @@
-package com.example.property_launch_app
+package com.initum.propertyLaunchApp
 
 import io.flutter.embedding.android.FlutterActivity
 
