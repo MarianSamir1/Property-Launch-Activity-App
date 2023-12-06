@@ -22,7 +22,7 @@ class VillaOrFlatWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: 86.w,
-        padding: EdgeInsets.symmetric(vertical: 8.h),
+        padding: EdgeInsets.symmetric(vertical: 7.h),
         decoration: BoxDecoration(
           color: currentValue == containerTitle
               ? ColorManager.primaryColor

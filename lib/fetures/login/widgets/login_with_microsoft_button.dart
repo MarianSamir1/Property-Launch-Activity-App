@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/fetures/layout/view/layout_screen.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
+import 'package:property_launch_app/utilities/styles/fonts.dart';
 
 import '../../../utilities/components/other/custom_svg_picture.dart';
 import '../../../utilities/components/other/custom_text.dart';
@@ -42,13 +43,14 @@ class LoginWithMicrosoftButton extends StatelessWidget {
                 ),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const CustomSvgPicture(svgImage: IconPathes.microsoft),
                       SizedBox(width: 16.w),
-                      const CustomText(
+                      CustomText(
                         text: Constants.loginWithMicrosoft,
                         fontWeight: FontWeight.w500,
+                        fontSize: FontManager.font17,
                       )
                     ]),
               ),

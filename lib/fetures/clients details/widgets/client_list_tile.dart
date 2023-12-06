@@ -6,6 +6,7 @@ import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ClientListTile extends StatelessWidget {
   const ClientListTile({super.key});
@@ -16,7 +17,7 @@ class ClientListTile extends StatelessWidget {
       titleAlignment: ListTileTitleAlignment.top,
       leading: Container(
         padding: EdgeInsets.all(15.r),
-        color: ColorManager.lightGreyE0E0,
+        color: ColorManager.lightGreyE0E0.withOpacity(0.5),
         child: const CustomSvgPicture(svgImage: IconPathes.person),
       ),
       title: CustomText(
@@ -37,7 +38,10 @@ class ClientListTile extends StatelessWidget {
             fontSize: FontManager.font18,
           ),
           InkWell(
-            onTap: (){},
+            onTap: () async {
+              await launchUrlFun(
+                  url: Uri(scheme: "tel", path: "+201223142255"));
+            },
             child: const CustomText(
               text: Constants.call,
               fontWeight: FontWeight.w500,
@@ -47,5 +51,13 @@ class ClientListTile extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> launchUrlFun({required Uri url}) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw Exception('Could not launch $url');
+    }
   }
 }

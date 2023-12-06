@@ -39,7 +39,9 @@ class SelectUnitsBody extends StatelessWidget {
                         child: BlocBuilder<CreateNewWishlistCubit,
                             CreateNewWishlistState>(
                           builder: (context, state) => CustomText(
-                            text: cubit.clientsList[cubit.selectedClientIndex!],
+                            text: cubit.selectedClientIndex == null
+                                ? "Ahmed Sami Mahmoud"
+                                : cubit.clientsList[cubit.selectedClientIndex!],
                             color: ColorManager.black1919.withOpacity(0.7),
                             textOverflow: TextOverflow.ellipsis,
                             maxLines: 1,

@@ -24,17 +24,20 @@ class _CreateNewWishlistScreenState extends State<CreateNewWishlistScreen> {
     super.initState();
     if (widget.step != null) {
       CreateNewWishlistCubit.get(context).currentStep = widget.step!;
+      // CreateNewWishlistCubit.get(context).selectedClientIndex is the client that passing it from clients details ;
     } else {
       CreateNewWishlistCubit.get(context).currentStep = 0;
+      CreateNewWishlistCubit.get(context).selectedClientIndex = null;
     }
+    CreateNewWishlistCubit.get(context).unitsIDsList = [];
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CreateNewWishlistCubit, CreateNewWishlistState>(
       builder: (context, state) =>
-      //=================================== Will pop scope =======================================
-       WillPopScope(
+          //=================================== Will pop scope =======================================
+          WillPopScope(
         onWillPop: () async {
           if (widget.step != null &&
               CreateNewWishlistCubit.get(context).currentStep != 2) {
@@ -64,7 +67,12 @@ class _CreateNewWishlistScreenState extends State<CreateNewWishlistScreen> {
               onTap: () {
                 if (widget.step != null &&
                     CreateNewWishlistCubit.get(context).currentStep != 2) {
-                  Navigator.pop(context);
+                  alertDialog(
+                    context: context,
+                    widget: DiscardWishlistDialog(
+                      onDelete: () {},
+                    ),
+                  );
                 } else if (CreateNewWishlistCubit.get(context).currentStep ==
                     0) {
                   alertDialog(

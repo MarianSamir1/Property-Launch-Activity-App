@@ -25,33 +25,32 @@ class UnitsSection extends StatelessWidget {
           text: Constants.unitsInTheCampaign,
           fontWeight: FontWeight.w500,
         ),
+        SizedBox(height: 8.h),
         //====================== villa , flat =====================
         BlocBuilder<UnitsListCubit, UnitsListState>(
-          builder: (context, state) => Padding(
-            padding: EdgeInsets.symmetric(vertical: 11.h),
-            child: Row(
-              children: [
-                VillaOrFlatWidget(
-                    containerTitle: "Villa",
-                    currentValue: UnitsListCubit.get(context).villaOrFlatt,
-                    onTap: () {
-                      UnitsListCubit.get(context).isVillaChangeFun(
-                        villaOrFlat: "Villa",
-                      );
-                    }),
-                SizedBox(width: 10.w),
-                VillaOrFlatWidget(
-                    containerTitle: "Flat",
-                    currentValue: UnitsListCubit.get(context).villaOrFlatt,
-                    onTap: () {
-                      UnitsListCubit.get(context).isVillaChangeFun(
-                        villaOrFlat: "Flat",
-                      );
-                    }),
-              ],
-            ),
+          builder: (context, state) => Row(
+            children: [
+              VillaOrFlatWidget(
+                  containerTitle: "Villa",
+                  currentValue: UnitsListCubit.get(context).villaOrFlatt,
+                  onTap: () {
+                    UnitsListCubit.get(context).isVillaChangeFun(
+                      villaOrFlat: "Villa",
+                    );
+                  }),
+              SizedBox(width: 10.w),
+              VillaOrFlatWidget(
+                  containerTitle: "Flat",
+                  currentValue: UnitsListCubit.get(context).villaOrFlatt,
+                  onTap: () {
+                    UnitsListCubit.get(context).isVillaChangeFun(
+                      villaOrFlat: "Flat",
+                    );
+                  }),
+            ],
           ),
         ),
+        SizedBox(height: 12.h),
         //====================== units list ========================
         ListView.separated(
           shrinkWrap: true,

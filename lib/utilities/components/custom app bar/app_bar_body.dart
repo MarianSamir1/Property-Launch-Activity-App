@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:property_launch_app/fetures/notification/view/notification_screen.dart';
 import 'package:property_launch_app/utilities/components/other/custom_svg_picture.dart';
 import 'package:property_launch_app/utilities/components/other/custom_text.dart';
+import 'package:property_launch_app/utilities/components/other/navigation.dart';
+import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
@@ -9,7 +12,11 @@ import 'package:property_launch_app/utilities/styles/fonts.dart';
 class ScreensAppBarBody extends StatelessWidget {
   final String title;
   final Function()? onTap;
-  const ScreensAppBarBody({super.key, required this.title, this.onTap});
+  const ScreensAppBarBody({
+    super.key,
+    required this.title,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +42,15 @@ class ScreensAppBarBody extends StatelessWidget {
             fontSize: FontManager.font17,
           ),
           const Spacer(),
-          const CustomSvgPicture(svgImage: IconPathes.notification)
+          InkWell(
+            onTap: () {
+              if (title != Constants.messsages) {
+                navigatePush(
+                    context: context, widget: const NotificationScreen());
+              }
+            },
+            child: const CustomSvgPicture(svgImage: IconPathes.notification),
+          )
         ],
       ),
     );

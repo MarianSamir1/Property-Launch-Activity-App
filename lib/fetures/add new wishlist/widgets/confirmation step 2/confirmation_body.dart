@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/cubit.dart';
 import 'package:property_launch_app/utilities/components/app%20sheard%20components/unit_data_with_border.dart';
 import 'package:property_launch_app/utilities/components/custom%20buttons/custom_button.dart';
@@ -30,7 +31,9 @@ class ConfirmWishlistbody extends StatelessWidget {
                   ),
                   SizedBox(height: 8.h),
                   CustomText(
-                    text: cubit.clientsList[cubit.selectedClientIndex!],
+                    text: cubit.selectedClientIndex == null
+                        ? "Ahmed Sami Mahmoud"
+                        : cubit.clientsList[cubit.selectedClientIndex!],
                     color: ColorManager.black1919.withOpacity(0.7),
                     textOverflow: TextOverflow.ellipsis,
                     maxLines: 1,
@@ -47,7 +50,19 @@ class ConfirmWishlistbody extends StatelessWidget {
                     shrinkWrap: true,
                     padding: EdgeInsets.zero,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => const UnitDataWithBorder(),
+                    itemBuilder: (context, index) => Slidable(
+                        endActionPane: ActionPane(
+                          motion: const StretchMotion(),
+                          children: [
+                            SlidableAction(
+                              backgroundColor: Colors.red,
+                              onPressed: (context) {},
+                              icon: Icons.delete_outline,
+                              foregroundColor: Colors.white,
+                            )
+                          ],
+                        ),
+                        child: const UnitDataWithBorder()),
                     separatorBuilder: (context, index) => SizedBox(height: 5.h),
                     itemCount: cubit.unitsIDsList.length,
                   ),

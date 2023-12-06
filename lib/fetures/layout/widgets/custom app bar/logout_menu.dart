@@ -15,6 +15,7 @@ class LogOutMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
+      surfaceTintColor: ColorManager.white,
       position: PopupMenuPosition.under,
       icon: CustomSvgPicture(
         svgImage: IconPathes.bottomArrow,
