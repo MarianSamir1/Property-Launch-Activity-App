@@ -32,7 +32,7 @@ class Constants {
   static const String managedWishList = "Managed Wish-List";
   static const String wishedForUnits = "Wished For Units";
   static const String yourClients = "Your Clients";
-  static const String unitsInTheCampaign = "Units in the campaign";
+  static const String unitsType = "Units type";
   static const String messsages = "Messsages";
   static const String yourClientsMessages = "Your Clients Messages";
   static const String clientDetails = "Client Details";
@@ -48,4 +48,5 @@ class Constants {
   static const String confirm = "Confirm";
   static const String edit = "Edit";
   static const String addUnitsToTheWishlist = "Add units to the wishlist";
+  static const String finishingType = "Finishing type";
 }

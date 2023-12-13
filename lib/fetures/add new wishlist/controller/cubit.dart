@@ -31,10 +31,11 @@ class CreateNewWishlistCubit extends Cubit<CreateNewWishlistState> {
     }
   }
 
-  String villaOrFlatt = "Villa";
+ List<String> villaOrFlatList = ["All", "Villa", "Flat"];
+  int villaOrFlatCurrentIndex = 0;
 
-  isVillaChangeFun({required String villaOrFlat}) {
-    villaOrFlatt = villaOrFlat;
+  isVillaChangeFun({required int villaOrFlat}) {
+    villaOrFlatCurrentIndex = villaOrFlat;
     emit(IsVillaChangeFunSuccessState());
   }
 

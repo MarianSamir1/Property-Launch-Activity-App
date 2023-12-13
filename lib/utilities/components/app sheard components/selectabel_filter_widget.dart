@@ -4,42 +4,44 @@ import 'package:property_launch_app/utilities/components/other/custom_text.dart'
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
 
-class VillaOrFlatWidget extends StatelessWidget {
+class SelectableFilterWidget extends StatelessWidget {
   final String containerTitle;
   final Function() onTap;
-  final String currentValue;
-  const VillaOrFlatWidget({
+  final int currentIndex;
+  final int containerIndex;
+  const SelectableFilterWidget({
     super.key,
     required this.containerTitle,
     required this.onTap,
-    required this.currentValue,
+    required this.currentIndex,
+    required this.containerIndex,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(50.r),
+      borderRadius: BorderRadius.circular(4.r),
+      splashColor:ColorManager.white  ,
       onTap: onTap,
       child: Container(
-        width: 86.w,
-        padding: EdgeInsets.symmetric(vertical: 7.h),
+        padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 16.w),
         decoration: BoxDecoration(
-          color: currentValue == containerTitle
-              ? ColorManager.primaryColor
-              : ColorManager.white,
           border: Border.all(
-            color: ColorManager.primaryColor,
+            color: currentIndex == containerIndex
+                //condition based on witch is select
+                ? ColorManager.primaryColor
+                : ColorManager.lightGreyE0E0,
           ),
-          borderRadius: BorderRadius.circular(50.r),
+          borderRadius: BorderRadius.circular(4.r),
         ),
         child: CustomText(
           text: containerTitle,
           textAlign: TextAlign.center,
-          color: currentValue == containerTitle
+          color: currentIndex == containerIndex
               //condition based on witch is select
-              ? ColorManager.white
-              : ColorManager.primaryColor,
-          fontSize: FontManager.font18,
+              ? ColorManager.primaryColor
+              : ColorManager.grey828,
+          fontSize: FontManager.font16,
           fontWeight: FontWeight.w500,
         ),
       ),

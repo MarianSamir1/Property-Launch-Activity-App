@@ -3,10 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
-import 'package:property_launch_app/utilities/styles/fonts.dart';
 
-class LaunchAndProjectNameWidget extends StatelessWidget {
-  const LaunchAndProjectNameWidget({super.key});
+class LaunchAndTargetAudiencesWidget extends StatelessWidget {
+  const LaunchAndTargetAudiencesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +13,31 @@ class LaunchAndProjectNameWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //================= project name =============
         Column(
           children: [
-            SizedBox(height: 15.h),
-            CustomText(
-              text: "Palm Park",
-              fontSize: FontManager.font18,
-              fontWeight: FontWeight.bold,
+            SizedBox(height: 10.h),
+            //================= direct , targetAudiences ============================
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.h),
+              child: Row(
+                children: [
+                  const CustomText(
+                    text: Constants.direct,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 6.w),
+                    child: const CircleAvatar(
+                      backgroundColor: ColorManager.black1919,
+                      maxRadius: 2,
+                    ),
+                  ),
+                  const CustomText(
+                    text: Constants.targetAudiences,
+                    color: ColorManager.grey828,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

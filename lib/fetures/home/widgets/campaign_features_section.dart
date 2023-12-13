@@ -33,30 +33,7 @@ class CampaignFeaturesSection extends StatelessWidget {
           child: Column(
             children: [
               //================= Launch And Project Name Widget ======================
-              const LaunchAndProjectNameWidget(),
-              //================= direct , targetAudiences ============================
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 6.h),
-                child: Row(
-                  children: [
-                    const CustomText(
-                      text: Constants.direct,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 6.w),
-                      child: const CircleAvatar(
-                        backgroundColor: ColorManager.black1919,
-                        maxRadius: 2,
-                      ),
-                    ),
-                    const CustomText(
-                      text: Constants.targetAudiences,
-                      color: ColorManager.grey828,
-                    ),
-                  ],
-                ),
-              ),
+              const LaunchAndTargetAudiencesWidget(),
               //================= from , to date ============================
               Container(
                 padding: EdgeInsets.all(16.r),

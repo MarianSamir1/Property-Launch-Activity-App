@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/utilities/components/app%20sheard%20components/villa_or_flat_widget.dart';
+import 'package:property_launch_app/utilities/components/app%20sheard%20components/selectabel_filter_widget.dart';
 import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 
+import '../../../utilities/components/app sheard components/unit_data_with_border.dart';
 import '../controller/cubit.dart';
 import '../controller/states.dart';
-import '../../../utilities/components/app sheard components/unit_data_with_border.dart';
 
 class UnitsSection extends StatelessWidget {
   const UnitsSection({super.key});
@@ -19,39 +19,69 @@ class UnitsSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         //first secton of choose campain in layout screen ( LayoutHeaderBody )
-        //====================== Campaign Features title =======================
+        //====================== units Type list =======================
         SizedBox(height: 10.h),
         const CustomText(
-          text: Constants.unitsInTheCampaign,
+          text: Constants.unitsType,
           fontWeight: FontWeight.w500,
         ),
         SizedBox(height: 8.h),
-        //====================== villa , flat =====================
         BlocBuilder<UnitsListCubit, UnitsListState>(
-          builder: (context, state) => Row(
-            children: [
-              VillaOrFlatWidget(
-                  containerTitle: "Villa",
-                  currentValue: UnitsListCubit.get(context).villaOrFlatt,
+          builder: (context, state) => SizedBox(
+            height: 30.h,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Center(
+                child: SelectableFilterWidget(
+                  containerTitle:
+                      UnitsListCubit.get(context).villaOrFlatList[index],
+                  currentIndex:
+                      UnitsListCubit.get(context).villaOrFlatCurrentIndex,
+                  containerIndex: index,
                   onTap: () {
                     UnitsListCubit.get(context).isVillaChangeFun(
-                      villaOrFlat: "Villa",
+                      villaOrFlat: index,
                     );
-                  }),
-              SizedBox(width: 10.w),
-              VillaOrFlatWidget(
-                  containerTitle: "Flat",
-                  currentValue: UnitsListCubit.get(context).villaOrFlatt,
-                  onTap: () {
-                    UnitsListCubit.get(context).isVillaChangeFun(
-                      villaOrFlat: "Flat",
-                    );
-                  }),
-            ],
+                  },
+                ),
+              ),
+              separatorBuilder: (context, index) => SizedBox(width: 10.w),
+              itemCount: UnitsListCubit.get(context).villaOrFlatList.length,
+            ),
           ),
         ),
-        SizedBox(height: 12.h),
-        //====================== units list ========================
+        SizedBox(height: 18.h),
+        //====================== finishing Type list =======================
+        const CustomText(
+          text: Constants.finishingType,
+          fontWeight: FontWeight.w500,
+        ),
+        SizedBox(height: 8.h),
+        BlocBuilder<UnitsListCubit, UnitsListState>(
+          builder: (context, state) => SizedBox(
+            height: 30.h,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Center(
+                child: SelectableFilterWidget(
+                  containerTitle:
+                      UnitsListCubit.get(context).finishingTypeList[index],
+                  currentIndex:
+                      UnitsListCubit.get(context).finishingTypeCurrentIndex,
+                  containerIndex: index,
+                  onTap: () {
+                    UnitsListCubit.get(context).finishingTypeChangeFun(
+                      finishingTypeIndex: index,
+                    );
+                  },
+                ),
+              ),
+              separatorBuilder: (context, index) => SizedBox(width: 10.w),
+              itemCount: UnitsListCubit.get(context).finishingTypeList.length,
+            ),
+          ),
+        ),
+        
         ListView.separated(
           shrinkWrap: true,
           padding: EdgeInsets.zero,
