@@ -11,7 +11,9 @@ class ClientDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: [
+        //======================== Client List Tile ====================================
         const ClientListTile(),
+        //===============================================================================
         Padding(
           padding: EdgeInsets.all(16.0.r),
           child: Column(

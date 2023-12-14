@@ -13,7 +13,7 @@ class CampaignFeaturesSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 10.h),
+        SizedBox(height: 5.h),
         //====================== Campaign Features title =======================
         const CustomText(
           text: Constants.campaignFeatures,

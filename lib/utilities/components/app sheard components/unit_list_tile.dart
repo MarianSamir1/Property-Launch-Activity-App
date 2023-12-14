@@ -26,7 +26,7 @@ class UnitListTile extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 6.h),
         Row(
           children: [
             const CustomText(
@@ -40,7 +40,7 @@ class UnitListTile extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 6.h),
         Row(
           children: [
             Expanded(
@@ -59,7 +59,7 @@ class UnitListTile extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 6.h),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -68,16 +68,22 @@ class UnitListTile extends StatelessWidget {
               color: ColorManager.grey828,
               size: 17.r,
             ),
-            SizedBox(width: 20.w),
-            CustomText(
-              text: "12/1/2024",
-              fontWeight: FontWeight.w500,
-              color: ColorManager.black.withOpacity(0.5),
+            SizedBox(width: 10.w),
+            Padding(
+              padding: const EdgeInsets.only(top: 4),
+              child: CustomText(
+                text: "12/1/2024",
+                fontWeight: FontWeight.w500,
+                color: ColorManager.black.withOpacity(0.5),
+              ),
             ),
             const Spacer(),
-            const CustomText(
-              text: "\$14,816,000",
-              fontWeight: FontWeight.w500,
+            const Padding(
+              padding: EdgeInsets.only(top: 4),
+              child: CustomText(
+                text: "\$14,816,000",
+                fontWeight: FontWeight.w500,
+              ),
             )
           ],
         ),

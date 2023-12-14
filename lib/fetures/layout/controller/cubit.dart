@@ -49,4 +49,10 @@ class LayoutCubit extends Cubit<LayoutState> {
     selectedCampaignIndex = campaignIndex;
     emit(SelectedCampaignySuccessState());
   }
+
+  bool addUnitsFiltration = false;
+  addUnitsFiltrationFun() {
+    addUnitsFiltration = !addUnitsFiltration;
+    emit(AddUnitsFiltrationSuccessState());
+  }
 }

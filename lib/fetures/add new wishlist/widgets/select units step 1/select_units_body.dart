@@ -57,7 +57,7 @@ class SelectUnitsBody extends StatelessWidget {
                           );
                         },
                         child: const CustomText(
-                          text: Constants.change,
+                          text: Constants.edit,
                           color: ColorManager.primaryColor,
                           fontWeight: FontWeight.w500,
                         ),

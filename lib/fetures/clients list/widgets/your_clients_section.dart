@@ -14,7 +14,7 @@ class YourClientsSection extends StatelessWidget {
       children: [
         //first secton of choose campain in layout screen ( LayoutHeaderBody )
         //================= YourClients Section ==================
-        SizedBox(height: 10.h),
+        SizedBox(height: 5.h),
         //====================== Campaign Features title =======================
         const CustomText(
           text: Constants.yourClients,

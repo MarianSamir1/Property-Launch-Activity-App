@@ -21,7 +21,7 @@ class Constants {
   static const String selectCampaign = "Select campaign";
   static const String selectClient = "Select client";
   static const String campaign = "Campaign";
-  static const String change = "Change";
+  static const String edit = "Edit";
   static const String campaignFeatures = "Campaign Features";
   static const String direct = "Direct";
   static const String targetAudiences = "Target Audiences";
@@ -46,7 +46,8 @@ class Constants {
   static const String selectedUnits = "Selected Units";
   static const String client = "Client";
   static const String confirm = "Confirm";
-  static const String edit = "Edit";
   static const String addUnitsToTheWishlist = "Add units to the wishlist";
   static const String finishingType = "Finishing type";
+  static const String findMatches = "Find matches";
+  static const String unitsFilteredBy = "Units filtered by";
 }
