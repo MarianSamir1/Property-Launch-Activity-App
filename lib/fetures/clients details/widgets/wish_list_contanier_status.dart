@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:property_launch_app/utilities/components/app%20sheard%20components/unit_list_tile.dart';
+import 'package:property_launch_app/utilities/components/other/custom_divider.dart';
 import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 import 'package:property_launch_app/utilities/styles/fonts.dart';
@@ -70,10 +70,34 @@ class WishListContanierStatus extends StatelessWidget {
             padding: EdgeInsets.zero,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => const UnitListTile(),
-            separatorBuilder: (context, index) => SizedBox(height: 10.h),
+            itemBuilder: (context, index) => Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const CustomText(
+                      text: "02/002-0D",
+                      fontWeight: FontWeight.w500,
+                    ),
+                    SizedBox(height: 3.h),
+                    const CustomText(
+                      text: "\$14,816,000",
+                      color: ColorManager.grey828,
+                    )
+                  ],
+                ),
+                const Spacer(),
+                const CustomText(
+                  text: "Item status",
+                  color: ColorManager.primaryColor,
+                  fontWeight: FontWeight.w500,
+                )
+              ],
+            ),
+            separatorBuilder: (context, index) => const CustomDivider(),
             itemCount: 3,
-          )
+          ),
+          SizedBox(height: 10.h),
         ],
       ),
     );

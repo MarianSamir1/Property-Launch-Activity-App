@@ -9,3 +9,7 @@ class IsVillaChangeFunSuccessState extends CreateNewWishlistState {}
 class SelectedClientSuccessState extends CreateNewWishlistState {}
 
 class AddUnitsToWishListSuccessState extends CreateNewWishlistState {}
+
+class PassingStepChangeSuccessState extends CreateNewWishlistState {}
+
+class DeleteUnitsFromWishListSuccessState extends CreateNewWishlistState {}

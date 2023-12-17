@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/cubit.dart';
@@ -29,11 +30,9 @@ class ConfirmWishlistbody extends StatelessWidget {
                     text: Constants.client,
                     fontWeight: FontWeight.bold,
                   ),
-                  SizedBox(height: 8.h),
+                  SizedBox(height: 6.h),
                   CustomText(
-                    text: cubit.selectedClientIndex == null
-                        ? "Ahmed Sami Mahmoud"
-                        : cubit.clientsList[cubit.selectedClientIndex!],
+                    text: "Ahmed Sami Mahmoud",
                     color: ColorManager.black1919.withOpacity(0.7),
                     textOverflow: TextOverflow.ellipsis,
                     maxLines: 1,
@@ -45,26 +44,39 @@ class ConfirmWishlistbody extends StatelessWidget {
                     text: Constants.selectedUnits,
                     fontWeight: FontWeight.w500,
                   ),
+                  SizedBox(height: 6.h),
+                  CustomText(
+                    text: Constants.swipeToRearrangeYourUnits,
+                    color: ColorManager.black1919.withOpacity(0.7),
+                    fontWeight: FontWeight.w500,
+                  ),
                   SizedBox(height: 10.h),
-                  ListView.separated(
-                    shrinkWrap: true,
-                    padding: EdgeInsets.zero,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => Slidable(
+                  BlocBuilder(
+                    builder: (context, state) => ListView.separated(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.zero,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) => Slidable(
                         endActionPane: ActionPane(
                           motion: const StretchMotion(),
                           children: [
                             SlidableAction(
                               backgroundColor: Colors.red,
-                              onPressed: (context) {},
+                              onPressed: (context) {
+                                CreateNewWishlistCubit.get(context)
+                                    .deleteUnitsFromWishListFun(index: index);
+                              },
                               icon: Icons.delete_outline,
                               foregroundColor: Colors.white,
                             )
                           ],
                         ),
-                        child: const UnitDataWithBorder()),
-                    separatorBuilder: (context, index) => SizedBox(height: 5.h),
-                    itemCount: cubit.unitsIDsList.length,
+                        child: const UnitDataWithBorder(),
+                      ),
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 5.h),
+                      itemCount: cubit.unitsIDsList.length,
+                    ),
                   ),
                   SizedBox(height: 10.h),
                 ],

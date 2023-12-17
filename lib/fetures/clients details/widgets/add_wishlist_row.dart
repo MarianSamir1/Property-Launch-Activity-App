@@ -25,7 +25,7 @@ class AddWishListRow extends StatelessWidget {
           onPressed: () {
             navigatePush(
               context: context,
-              widget: const CreateNewWishlistScreen(step: 1),
+              widget: const CreateNewWishlistScreen(step: 2),
             );
           },
           icon: Icon(

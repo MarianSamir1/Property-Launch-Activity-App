@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/select%20units%20step%201/select_units_body.dart';
-import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/confirmation%20step%202/confirmation_body.dart';
-import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/select%20client%20step%200/select_client_body.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/step1%20clients/clients_body.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/step2%20filteration%20units/filteration_units_body.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/step3%20select%20units/select_units_body.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/step4%20confirmation/confirmation_body.dart';
+import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/step0%20select%20client/select_client_body.dart';
 
 import 'states.dart';
 
@@ -11,11 +13,28 @@ class CreateNewWishlistCubit extends Cubit<CreateNewWishlistState> {
 
   static CreateNewWishlistCubit get(context) => BlocProvider.of(context);
 
+//============================ clients filteration controllers ========================
+  TextEditingController clientNameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController nationalIDController = TextEditingController();
+  TextEditingController passportNumberController = TextEditingController();
+
+  //============================ units filtaration =====================================
+  TextEditingController spaceController = TextEditingController();
+
   List<Widget> addNewWishlistSteps = const [
     SelectClientBody(),
+    ClientsBody(),
+    FiltrationUnitsBody(),
     SelectUnitsBody(),
     ConfirmWishlistbody()
   ];
+
+  int? passingStep;
+  passingStepChangeFun({int? index}) {
+    passingStep = index;
+    emit(PassingStepChangeSuccessState());
+  }
 
   int currentStep = 0;
 
@@ -31,31 +50,12 @@ class CreateNewWishlistCubit extends Cubit<CreateNewWishlistState> {
     }
   }
 
- List<String> villaOrFlatList = ["All", "Villa", "Flat"];
+  List<String> villaOrFlatList = ["All", "Villa", "Flat"];
   int villaOrFlatCurrentIndex = 0;
 
   isVillaChangeFun({required int villaOrFlat}) {
     villaOrFlatCurrentIndex = villaOrFlat;
     emit(IsVillaChangeFunSuccessState());
-  }
-
-  List<String> clientsList = [
-    "Mohamed Sami 1",
-    "Mohamed Sami 2",
-    "Mohamed Sami 3",
-    "Mohamed Sami 4",
-    "Mohamed Sami 5",
-    "Mohamed Sami 6",
-    "Mohamed Sami 7",
-    "Mohamed Sami 8",
-    "Mohamed Sami 9",
-    "Mohamed Sami 10",
-  ];
-  int? selectedClientIndex;
-
-  selectClientFun({required int clientIndex}) {
-    selectedClientIndex = clientIndex;
-    emit(SelectedClientSuccessState());
   }
 
   List<int> unitsIDsList = [];
@@ -67,5 +67,10 @@ class CreateNewWishlistCubit extends Cubit<CreateNewWishlistState> {
       unitsIDsList.add(index);
     }
     emit(AddUnitsToWishListSuccessState());
+  }
+
+  deleteUnitsFromWishListFun({required int index}) {
+      unitsIDsList.remove(index);
+    emit(DeleteUnitsFromWishListSuccessState());
   }
 }

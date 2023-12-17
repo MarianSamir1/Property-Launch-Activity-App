@@ -36,7 +36,7 @@ class UnitsSection extends StatelessWidget {
           ],
         ),
         CustomText(
-          text: "Villa - Fully Finishing - (100 : 200 m2 )",
+          text: "Villa - (100 : 200 m2 )",
           color: ColorManager.black1919.withOpacity(0.7),
           textOverflow: TextOverflow.ellipsis,
           maxLines: 1,

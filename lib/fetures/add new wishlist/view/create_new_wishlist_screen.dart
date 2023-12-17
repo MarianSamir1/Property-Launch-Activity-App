@@ -24,10 +24,12 @@ class _CreateNewWishlistScreenState extends State<CreateNewWishlistScreen> {
     super.initState();
     if (widget.step != null) {
       CreateNewWishlistCubit.get(context).currentStep = widget.step!;
+      CreateNewWishlistCubit.get(context)
+          .passingStepChangeFun(index: widget.step);
       // CreateNewWishlistCubit.get(context).selectedClientIndex is the client that passing it from clients details ;
     } else {
       CreateNewWishlistCubit.get(context).currentStep = 0;
-      CreateNewWishlistCubit.get(context).selectedClientIndex = null;
+      CreateNewWishlistCubit.get(context).passingStep = null;
     }
     CreateNewWishlistCubit.get(context).unitsIDsList = [];
   }
@@ -40,7 +42,7 @@ class _CreateNewWishlistScreenState extends State<CreateNewWishlistScreen> {
           WillPopScope(
         onWillPop: () async {
           if (widget.step != null &&
-              CreateNewWishlistCubit.get(context).currentStep != 2) {
+              CreateNewWishlistCubit.get(context).currentStep != 1) {
             alertDialog(
               context: context,
               widget: DiscardWishlistDialog(
@@ -66,7 +68,7 @@ class _CreateNewWishlistScreenState extends State<CreateNewWishlistScreen> {
               title: Constants.newWishList,
               onTap: () {
                 if (widget.step != null &&
-                    CreateNewWishlistCubit.get(context).currentStep != 2) {
+                    CreateNewWishlistCubit.get(context).currentStep != 1) {
                   alertDialog(
                     context: context,
                     widget: DiscardWishlistDialog(

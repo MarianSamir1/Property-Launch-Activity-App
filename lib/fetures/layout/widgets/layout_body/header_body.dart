@@ -28,7 +28,8 @@ class LayoutHeaderBody extends StatelessWidget {
               : CustomText(
                   text: Constants.campaign,
                   fontSize: FontManager.font16,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold,
+                ),
           if (cubit.selectedCampaignIndex != null) const SelectCampaignWidget(),
           if (cubit.selectedCampaignIndex == null)
             Column(

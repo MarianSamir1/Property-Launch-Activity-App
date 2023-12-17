@@ -50,4 +50,15 @@ class Constants {
   static const String finishingType = "Finishing type";
   static const String findMatches = "Find matches";
   static const String unitsFilteredBy = "Units filtered by";
+  static const String space = "Space";
+  static const String clientName = "Client Name";
+  static const String phoneNumber = "Phone Number";
+  static const String nationalId = "National Id";
+  static const String passportNumber = "Passport Number";
+  static const String enterClientName = "Enter Name";
+  static const String enterPhoneNumber = "Enter phone number";
+  static const String enterNationalId = "Enter national Id";
+  static const String enterPassportNumber = "Enter passport number";
+  static const String enterSpace = "Enter Space";
+  static const String swipeToRearrangeYourUnits = "swipe to rearrange your units";
 }

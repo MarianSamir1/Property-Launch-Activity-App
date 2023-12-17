@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/cubit.dart';
 import 'package:property_launch_app/fetures/add%20new%20wishlist/controller/states.dart';
-import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/icons_pathes.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
+import '../../../../utilities/components/app sheard components/unit_list_tile.dart';
 import '../../../../utilities/components/other/custom_svg_picture.dart';
 
 class UnitDataItem extends StatelessWidget {
@@ -24,13 +24,7 @@ class UnitDataItem extends StatelessWidget {
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(2.r),
-            border: Border.all(
-              color: CreateNewWishlistCubit.get(context)
-                      .unitsIDsList
-                      .contains(index)
-                  ? ColorManager.grey828
-                  : ColorManager.white,
-            ),
+            border: Border.all(color: ColorManager.lightGreyE0E0),
           ),
           child: Row(
             children: [
@@ -49,25 +43,9 @@ class UnitDataItem extends StatelessWidget {
                   width: 20.w,
                 ),
               SizedBox(width: 18.w),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CustomText(
-                    text: "02/002-0D",
-                    fontWeight: FontWeight.w500,
-                  ),
-                  SizedBox(height: 3.h),
-                  const CustomText(
-                    text: "\$14,816,000",
-                    color: ColorManager.grey828,
-                  )
-                ],
-              ),
-              const Spacer(),
-              const CustomText(
-                text: "3 Reserved",
-                color: ColorManager.primaryColor,
-                fontWeight: FontWeight.w500,
+              SizedBox(
+                width: 1.sw - 120,
+                child: const UnitListTile(),
               )
             ],
           ),

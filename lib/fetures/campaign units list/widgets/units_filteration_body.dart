@@ -7,6 +7,7 @@ import 'package:property_launch_app/utilities/components/custom%20buttons/custom
 import 'package:property_launch_app/utilities/components/other/custom_divider.dart';
 import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
+import '../../../utilities/components/app sheard components/card_textformfield.dart';
 import '../controller/cubit.dart';
 import '../controller/states.dart';
 
@@ -16,7 +17,7 @@ class UnitsFiltrationBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 1.sh-260.h,
+      height: 1.sh - 260.h,
       child: Column(
         children: [
           Column(
@@ -59,39 +60,46 @@ class UnitsFiltrationBody extends StatelessWidget {
               ),
               SizedBox(height: 16.h),
               //====================== finishing Type list =======================
-              const CustomText(
-                text: Constants.finishingType,
-                fontWeight: FontWeight.w500,
-              ),
-              SizedBox(height: 8.h),
-              BlocBuilder<UnitsListCubit, UnitsListState>(
-                builder: (context, state) => SizedBox(
-                  height: 37,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => Center(
-                      child: SelectableFilterWidget(
-                        containerTitle: UnitsListCubit.get(context)
-                            .finishingTypeList[index],
-                        currentIndex: UnitsListCubit.get(context)
-                            .finishingTypeCurrentIndex,
-                        containerIndex: index,
-                        onTap: () {
-                          UnitsListCubit.get(context).finishingTypeChangeFun(
-                            finishingTypeIndex: index,
-                          );
-                        },
-                      ),
-                    ),
-                    separatorBuilder: (context, index) => SizedBox(width: 10.w),
-                    itemCount:
-                        UnitsListCubit.get(context).finishingTypeList.length,
-                  ),
-                ),
-              ),
-              //======================= find matches button =======================
+              // const CustomText(
+              //   text: Constants.finishingType,
+              //   fontWeight: FontWeight.w500,
+              // ),
+              // SizedBox(height: 8.h),
+              // BlocBuilder<UnitsListCubit, UnitsListState>(
+              //   builder: (context, state) => SizedBox(
+              //     height: 37,
+              //     child: ListView.separated(
+              //       scrollDirection: Axis.horizontal,
+              //       itemBuilder: (context, index) => Center(
+              //         child: SelectableFilterWidget(
+              //           containerTitle: UnitsListCubit.get(context)
+              //               .finishingTypeList[index],
+              //           currentIndex: UnitsListCubit.get(context)
+              //               .finishingTypeCurrentIndex,
+              //           containerIndex: index,
+              //           onTap: () {
+              //             UnitsListCubit.get(context).finishingTypeChangeFun(
+              //               finishingTypeIndex: index,
+              //             );
+              //           },
+              //         ),
+              //       ),
+              //       separatorBuilder: (context, index) => SizedBox(width: 10.w),
+              //       itemCount:
+              //           UnitsListCubit.get(context).finishingTypeList.length,
+              //     ),
+              //   ),
+              // ),
+              //======================= find matches button ==========================
             ],
           ),
+          //=========================== space widget =================================
+          CardOfTextFormField(
+            controller: UnitsListCubit.get(context).spaceController,
+            textFormLabel: Constants.enterSpace,
+            titleName: Constants.space,
+          ),
+          //===========================================================================
           const Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 7.w),
