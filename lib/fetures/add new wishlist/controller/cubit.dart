@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:property_launch_app/fetures/add%20new%20wishlist/widgets/step1%20clients/clients_body.dart';
@@ -62,15 +63,26 @@ class CreateNewWishlistCubit extends Cubit<CreateNewWishlistState> {
 
   addUnitsToWishListFun({required int index}) {
     if (unitsIDsList.contains(index)) {
+      log("remove Units Index : $index");
       unitsIDsList.remove(index);
     } else {
+      log("add Units Index : $index");
       unitsIDsList.add(index);
     }
+    log("$unitsIDsList");
     emit(AddUnitsToWishListSuccessState());
   }
 
   deleteUnitsFromWishListFun({required int index}) {
-      unitsIDsList.remove(index);
+    // if (unitsIDsList.length != 1) {
+    //   log("remove Units Index : $index");
+    //   unitsIDsList.remove(index);
+    // } else {
+    //   showToast(
+    //     msg: "There must be at least one of units in the list",
+    //     state: ToastStates.ERROR,
+    //   );
+    // }
     emit(DeleteUnitsFromWishListSuccessState());
   }
 }

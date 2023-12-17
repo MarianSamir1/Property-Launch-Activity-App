@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: ColorManager.white,
           ),
           home: const LoginScreen(),
+          navigatorKey: navKey,
         ),
       ),
     );

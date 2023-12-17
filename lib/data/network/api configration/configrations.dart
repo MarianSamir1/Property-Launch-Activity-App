@@ -24,12 +24,12 @@ class ApiConfigration {
 
   // test Config
   static final Config config = Config(
-    tenant: 'd7be1e00-bf67-40de-a606-1a75a207d413',
-    clientId: '1c73c495-f296-479b-ae65-e640aea665b2',
+    tenant: '99f8b32c-f61b-4f4d-b17a-54fe7e07d3c5',
+    clientId: '44649c96-c709-4f0b-8931-6c6c9a1f52e5',
     scope:
         'openid profile offline_access https://initium.api.crm4.dynamics.com/.default',
     redirectUri: 'https://bluemotive.it/assets/img/complete.png',
-    clientSecret: 'fEP8Q~TwrQD5SjDyBZ2DX.Y~rBFl8sDAuO3D1cyB',
+    clientSecret: '6oZ8Q~m_zkJWECeizr7XgnAgo2dgfDLQaINO.azh',
     navigatorKey: navKey,
   );
 }
