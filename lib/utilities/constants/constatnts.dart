@@ -23,7 +23,7 @@ class Constants {
   static const String campaign = "Campaign";
   static const String edit = "Edit";
   static const String campaignFeatures = "Campaign Features";
-  static const String direct = "Direct";
+  static const String unitsCount = "Units Count";
   static const String targetAudiences = "Target Audiences";
   static const String reservationValue = "Reservation Value";
   static const String to = "to";

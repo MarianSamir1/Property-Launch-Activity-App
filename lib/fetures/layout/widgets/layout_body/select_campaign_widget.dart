@@ -24,7 +24,7 @@ class SelectCampaignWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: CustomText(
-                  text: cubit.campaignList[cubit.selectedCampaignIndex!],
+                  text: cubit.campaignModel!.value![cubit.selectedCampaignIndex!].blserTopic!,
                   color: ColorManager.black1919.withOpacity(0.7),
                   textOverflow: TextOverflow.ellipsis,
                   maxLines: 1,

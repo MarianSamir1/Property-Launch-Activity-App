@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:property_launch_app/models/campaign_model.dart';
 import 'package:property_launch_app/utilities/components/other/custom_text.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'package:property_launch_app/utilities/styles/colors.dart';
 
 class LaunchAndTargetAudiencesWidget extends StatelessWidget {
-  const LaunchAndTargetAudiencesWidget({super.key});
+  final CampaignData campaignData;
+  const LaunchAndTargetAudiencesWidget({super.key, required this.campaignData});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,8 @@ class LaunchAndTargetAudiencesWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 8.h),
               child: Row(
                 children: [
-                  const CustomText(
-                    text: Constants.direct,
+                  CustomText(
+                    text: campaignData.blsercampaigntypeFormattedValue!,
                     fontWeight: FontWeight.w500,
                   ),
                   Padding(
@@ -32,8 +34,9 @@ class LaunchAndTargetAudiencesWidget extends StatelessWidget {
                       maxRadius: 2,
                     ),
                   ),
-                  const CustomText(
-                    text: Constants.targetAudiences,
+                  CustomText(
+                    text:
+                        "${Constants.unitsCount} ${campaignData.blserUnitscount}",
                     color: ColorManager.grey828,
                   ),
                 ],
@@ -51,8 +54,8 @@ class LaunchAndTargetAudiencesWidget extends StatelessWidget {
               bottomRight: Radius.circular(15.r),
             ),
           ),
-          child: const CustomText(
-            text: Constants.launch,
+          child: CustomText(
+            text: campaignData.blserCampaignstatusFormattedValue!,
             color: ColorManager.green,
             fontWeight: FontWeight.w500,
           ),

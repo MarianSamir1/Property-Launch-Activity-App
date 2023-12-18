@@ -115,7 +115,7 @@ class HttpHelper {
         errorMessage: Constants.internetConnectionException,
       );
     } catch (e) {
-      log(' ========== http get Data $path throw Exeption : $e ==========');
+      log(' ========== http get Data $functionName throw Exeption : $e ==========');
       return ResponseHandlerClass(
         errorFlag: true,
         errorMessage: Constants.somethingWentWrong,

@@ -13,3 +13,4 @@ class AddUnitsToWishListSuccessState extends CreateNewWishlistState {}
 class PassingStepChangeSuccessState extends CreateNewWishlistState {}
 
 class DeleteUnitsFromWishListSuccessState extends CreateNewWishlistState {}
+class OnReorderSuccessState extends CreateNewWishlistState {}

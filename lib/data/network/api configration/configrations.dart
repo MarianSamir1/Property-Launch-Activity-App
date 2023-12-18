@@ -20,14 +20,14 @@ class ApiConfigration {
   //===================== test configration =============================
   // test baseUrl
   static String baseUrl =
-      "https://initiumsolutionsdefault.crm4.dynamics.com/api/data/v9.2";
+      "https://phdtest.crm4.dynamics.com/api/data/v9.2/";
 
   // test Config
   static final Config config = Config(
     tenant: '99f8b32c-f61b-4f4d-b17a-54fe7e07d3c5',
     clientId: '44649c96-c709-4f0b-8931-6c6c9a1f52e5',
     scope:
-        'openid profile offline_access https://initium.api.crm4.dynamics.com/.default',
+        'https://phdtest.crm4.dynamics.com/.default',
     redirectUri: 'https://bluemotive.it/assets/img/complete.png',
     clientSecret: '6oZ8Q~m_zkJWECeizr7XgnAgo2dgfDLQaINO.azh',
     navigatorKey: navKey,

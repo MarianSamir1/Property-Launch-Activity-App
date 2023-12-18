@@ -28,7 +28,7 @@ class SelectCampaignBottomSheetList extends StatelessWidget {
                 }
               },
               child: RadioRowItem(
-                title: cubit.campaignList[index],
+                title: cubit.campaignModel!.value![index].blserTopic!,
                 isSelected: cubit.selectedCampaignIndex == index,
               ),
             );
@@ -37,7 +37,7 @@ class SelectCampaignBottomSheetList extends StatelessWidget {
             height: 1,
             color: ColorManager.lightGreyE0E0,
           ),
-          itemCount: cubit.campaignList.length,
+          itemCount: cubit.campaignModel!.value!.length,
         ),
       ),
     );

@@ -11,10 +11,11 @@ class OuthAPI {
 
   static Future<ResponseHandlerClass> loginWithMicrosoft() async {
     try {
-      await oauth.login().catchError((error) {
+      final loginResponce = await oauth.login().catchError((error) {
         log(" ============ oauth error >>> $error ============ ");
         throw error;
       });
+       log("Login Responce >>>> $loginResponce");
       final token = await oauth.getAccessToken();
       if (token != null) {
         log("========= token is : $token ==========");
@@ -28,13 +29,15 @@ class OuthAPI {
 
         return ResponseHandlerClass(
             errorFlag: false, errorMessage: "Login Successfully");
+      } else {
+        return ResponseHandlerClass(
+            errorMessage: Constants.somethingWentWrong, errorFlag: true);
       }
-      return ResponseHandlerClass(
-          errorMessage: Constants.somethingWentWrong, errorFlag: true);
     } catch (e) {
       log('Outh API e => $e');
       return ResponseHandlerClass(errorMessage: '$e', errorFlag: true);
     }
+    
   }
 
   static bool accessTokenExpired() {
@@ -62,6 +65,7 @@ class OuthAPI {
     await oauth.logout();
     ChashHelper.clearData();
   }
+
 }
 //  static Future<ResponseHandlerClass> addDummyRecord() async {
 //     if (OuthAPI.accessTokenExpired()) {

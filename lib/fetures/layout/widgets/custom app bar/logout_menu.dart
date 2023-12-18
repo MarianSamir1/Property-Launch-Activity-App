@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:property_launch_app/fetures/layout/controller/cubit.dart';
 
 import '../../../../utilities/components/other/custom_svg_picture.dart';
 import '../../../../utilities/components/other/custom_text.dart';
-import '../../../../utilities/components/other/navigation.dart';
 import '../../../../utilities/constants/constatnts.dart';
 import '../../../../utilities/constants/icons_pathes.dart';
 import '../../../../utilities/styles/colors.dart';
-import '../../../login/view/login_screen.dart';
 
 class LogOutMenuWidget extends StatelessWidget {
   const LogOutMenuWidget({super.key});
@@ -28,10 +27,7 @@ class LogOutMenuWidget extends StatelessWidget {
         return [
           PopupMenuItem(
             onTap: () {
-              navigatepushAndRemoveUntil(
-                context: context,
-                widget: const LoginScreen(),
-              );
+              LayoutCubit.get(context).logOutFun(context);
             },
             height: 25.h,
             child: Row(

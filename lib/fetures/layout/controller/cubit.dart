@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:property_launch_app/data/apis/lanuch_campaign_api.dart';
+import 'package:property_launch_app/data/apis/outh_api.dart';
 import 'package:property_launch_app/fetures/clients%20list/view/clients_list_screen.dart';
 import 'package:property_launch_app/fetures/home/view/home_screen.dart';
 import 'package:property_launch_app/fetures/campaign%20units%20list/view/units_list_screen.dart';
+import 'package:property_launch_app/fetures/login/view/login_screen.dart';
+import 'package:property_launch_app/models/campaign_model.dart';
+import 'package:property_launch_app/models/response_handler_model.dart';
+import 'package:property_launch_app/utilities/components/other/navigation.dart';
 import 'package:property_launch_app/utilities/constants/constatnts.dart';
 import 'states.dart';
 
@@ -30,19 +36,6 @@ class LayoutCubit extends Cubit<LayoutState> {
     emit(ChangeLayoutBodySuccessState());
   }
 
-  List<String> campaignList = [
-    "Badya Launch Phase 1",
-    "Badya Launch Phase 2",
-    "Badya Launch Phase 3",
-    "Badya Launch Phase 4",
-    "Badya Launch Phase 5",
-    "Badya Launch Phase 6",
-    "Badya Launch Phase 7",
-    "Badya Launch Phase 8",
-    "Badya Launch Phase 9",
-    "Badya Launch Phase 10",
-  ];
-
   int? selectedCampaignIndex;
 
   selectCampaignFun({required int campaignIndex}) {
@@ -54,5 +47,27 @@ class LayoutCubit extends Cubit<LayoutState> {
   addUnitsFiltrationFun() {
     addUnitsFiltration = !addUnitsFiltration;
     emit(AddUnitsFiltrationSuccessState());
+  }
+
+  logOutFun(context) async {
+    await OuthAPI.logOutFunction();
+    navigatepushAndRemoveUntil(context: context, widget: const LoginScreen());
+  }
+
+  //========================================== APIs ==========================================
+  ResponseHandlerClass getAllCampaignsResponce = ResponseHandlerClass();
+  CampaignModel? campaignModel;
+
+  getAllCampaignsFun() async {
+    campaignModel = null;
+    getAllCampaignsResponce = ResponseHandlerClass();
+    emit(GetAllCampaignsLoadingState());
+    getAllCampaignsResponce = await LaunchCampaignsApi.getAllCampaigns();
+    if (getAllCampaignsResponce.errorFlag == false) {
+      campaignModel = CampaignModel.fromJson(getAllCampaignsResponce.values);
+      emit(GetAllCampaignsSuccessState());
+    } else {
+      emit(GetAllCampaignsErrorState());
+    }
   }
 }

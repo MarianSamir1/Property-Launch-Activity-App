@@ -72,6 +72,21 @@ class CreateNewWishlistCubit extends Cubit<CreateNewWishlistState> {
     log("$unitsIDsList");
     emit(AddUnitsToWishListSuccessState());
   }
+int showOrder = 0;
+  onReorderFun({
+    required oldIndex,
+    required newIndex,
+  }) {
+    if (oldIndex < newIndex) {
+      newIndex -= 1;
+    }
+    final item = unitsIDsList.removeAt(oldIndex);
+    unitsIDsList.insert(newIndex, item);
+    for (int i = 0; i <= unitsIDsList.length - 1; i++) {
+   //   unitsIDsList[i].rank = showOrder++;
+    }
+    emit(OnReorderSuccessState());
+  }
 
   deleteUnitsFromWishListFun({required int index}) {
     // if (unitsIDsList.length != 1) {
